@@ -1,0 +1,370 @@
+/* MyPageA.css - Font: Monomaniac One */
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap');
+
+.pagea-container {
+  font-family: 'Monomaniac One', sans-serif;
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  color: #ffffff;
+}
+
+/* ========== SIDEBAR ========== */
+.pagea-sidebar {
+  width: 280px;
+  min-width: 280px;
+  background: #0d0d1a;
+  border-right: 1px solid #2d1b69;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 24px 32px;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.back-btn-a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid #2d1b69;
+  color: #a855f7;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Monomaniac One', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: all 0.2s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.back-btn-a:hover {
+  background: #1e1b4b;
+  border-color: #a855f7;
+}
+
+.pagea-avatar-wrapper {
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.pagea-avatar-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.pagea-avatar-wrapper:hover .avatar-home-hint {
+  opacity: 1;
+}
+
+.pagea-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid #a855f7;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.avatar-home-hint {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #a855f7;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.pagea-name {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.pagea-title {
+  font-size: 0.85rem;
+  color: #a855f7;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.pagea-contact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #2d1b69;
+  border-bottom: 1px solid #2d1b69;
+  padding: 16px 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.contact-icon {
+  color: #a855f7;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.pagea-social {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  color: #6b7280;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #a855f7;
+}
+
+.section-title-side {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #a855f7;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.pagea-education {
+  width: 100%;
+}
+
+.edu-item {
+  background: #111130;
+  border-radius: 10px;
+  padding: 14px;
+  border-left: 3px solid #a855f7;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.edu-icon {
+  color: #a855f7;
+  font-size: 1.2rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.edu-degree {
+  font-size: 0.85rem;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.edu-school {
+  font-size: 0.78rem;
+  color: #a855f7;
+  margin-bottom: 2px;
+}
+
+.edu-year {
+  font-size: 0.72rem;
+  color: #6b7280;
+}
+
+.switch-btn-a {
+  font-family: 'Monomaniac One', sans-serif;
+  width: 100%;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #0891b2, #06b6d4);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.switch-btn-a:hover {
+  background: linear-gradient(135deg, #06b6d4, #22d3ee);
+  transform: translateY(-2px);
+}
+
+/* ========== MAIN ========== */
+.pagea-main {
+  flex: 1;
+  padding: 48px 48px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.pagea-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-heading {
+  font-size: 1.4rem;
+  color: #a855f7;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #a855f7, transparent);
+  border-radius: 2px;
+}
+
+.about-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #d1d5db;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.skill-card {
+  background: #0d0d1a;
+  border: 1px solid #2d1b69;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  border-color: #a855f7;
+}
+
+.skill-icon {
+  font-size: 1.6rem;
+  color: #a855f7;
+}
+
+.skill-name {
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.skill-bar-bg {
+  width: 100%;
+  height: 4px;
+  background: #1e1b4b;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #c084fc);
+  border-radius: 2px;
+}
+
+.skill-level {
+  font-size: 0.72rem;
+  color: #6b7280;
+  text-align: right;
+}
+
+/* Experience */
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.exp-card {
+  background: #0d0d1a;
+  border: 1px solid #2d1b69;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.exp-card:hover {
+  border-color: #a855f7;
+  transform: translateX(4px);
+}
+
+.exp-logo {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.exp-content {
+  flex: 1;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exp-role {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.exp-company {
+  font-size: 0.82rem;
+  color: #a855f7;
+}
+
+.exp-period {
+  font-size: 0.78rem;
+  color: #6b7280;
+  white-space: nowrap;
+  background: #111130;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.exp-desc {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  line-height: 1.6;
+}

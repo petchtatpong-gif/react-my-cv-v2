@@ -1,0 +1,587 @@
+/* MyPageB.css — Font: IBM Plex Mono | Neon-Grid Portfolio Style */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+:root {
+  --neon-green: #39ff14;
+  --neon-cyan: #00e5ff;
+  --neon-purple: #bf00ff;
+  --bg: #000000;
+  --bg2: #080808;
+  --bg3: #0d0d0d;
+  --border: #1a1a1a;
+  --border-neon: rgba(57, 255, 20, 0.3);
+  --text: #e4e4e4;
+  --muted: #555;
+}
+
+* { box-sizing: border-box; }
+
+.pageb-container {
+  font-family: 'IBM Plex Mono', monospace;
+  background: var(--bg);
+  min-height: 100vh;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════
+   TOP NAV
+══════════════════════════════ */
+.pageb-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 16px;
+}
+
+.pageb-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--neon-green);
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.pageb-back-btn:hover {
+  border-color: var(--neon-green);
+  background: rgba(57, 255, 20, 0.06);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.15);
+}
+
+.pageb-nav-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg3);
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.pageb-tab {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  padding: 7px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+.pageb-tab:hover { color: var(--text); }
+.pageb-tab--active {
+  background: var(--bg);
+  color: var(--neon-green);
+  border: 1px solid var(--border-neon);
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.15);
+}
+
+.pageb-switch-btn {
+  background: transparent;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  color: var(--neon-cyan);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.pageb-switch-btn:hover {
+  background: rgba(0, 229, 255, 0.06);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+/* ══════════════════════════════
+   HERO BANNER
+══════════════════════════════ */
+.pageb-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 48px 48px 40px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+}
+
+.pageb-hero-glow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(57,255,20,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* neon scan-line grid */
+.pageb-grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  gap: calc(100% / 7);
+  opacity: 0.06;
+}
+.pageb-grid-line {
+  width: 1px;
+  background: var(--neon-green);
+}
+
+.pageb-hero-content {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+/* Avatar */
+.pageb-avatar-wrap {
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.pageb-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(20%);
+  border: 2px solid var(--border-neon);
+  transition: all 0.3s;
+}
+.pageb-avatar-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 16px;
+  border: 1px solid rgba(57,255,20,0.2);
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.pageb-avatar-hint {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 6px;
+  padding: 3px 7px;
+  font-size: 0.7rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+.pageb-avatar-wrap:hover .pageb-avatar {
+  filter: grayscale(0%);
+  box-shadow: 0 0 24px rgba(57,255,20,0.3);
+}
+.pageb-avatar-wrap:hover .pageb-avatar-ring {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 16px rgba(57,255,20,0.15);
+}
+.pageb-avatar-wrap:hover .pageb-avatar-hint { opacity: 1; }
+
+/* Hero text */
+.pageb-hero-text { flex: 1; min-width: 260px; }
+
+.pageb-hero-label {
+  font-size: 0.78rem;
+  color: var(--neon-green);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.pageb-hero-name {
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.pageb-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.pageb-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.pageb-hero-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pageb-contact-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.73rem;
+  color: var(--neon-cyan);
+  text-decoration: none;
+  border: 1px solid rgba(0,229,255,0.2);
+  padding: 4px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.pageb-contact-chip:hover {
+  background: rgba(0,229,255,0.06);
+  border-color: var(--neon-cyan);
+}
+
+/* ══════════════════════════════
+   BODY / PANEL
+══════════════════════════════ */
+.pageb-body {
+  flex: 1;
+  padding: 40px 48px;
+}
+
+.pageb-panel {
+  animation: fadeUp 0.25s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pageb-panel-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+}
+
+.neon-bracket { color: var(--neon-green); }
+
+/* ── ABOUT TAB ── */
+.pageb-about-panel {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+.pageb-bio-text {
+  font-size: 0.92rem;
+  line-height: 1.9;
+  color: #aaa;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.neon-highlight {
+  color: var(--neon-green);
+  font-weight: 500;
+}
+
+.pageb-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.pageb-stat {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--neon-green);
+  border-radius: 8px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: border-color 0.2s;
+}
+.pageb-stat:hover { border-color: var(--neon-green); }
+
+.pageb-stat-num {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--neon-green);
+}
+.pageb-stat-label {
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Education card */
+.pageb-edu-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.pageb-edu-title {
+  font-size: 0.78rem;
+  color: var(--neon-green);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.pageb-edu-degree {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.pageb-edu-school {
+  font-size: 0.8rem;
+  color: var(--neon-cyan);
+  margin-bottom: 4px;
+}
+.pageb-edu-year {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+/* Cert list */
+.pageb-cert-list {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.pageb-cert-title {
+  font-size: 0.78rem;
+  color: var(--neon-green);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.pageb-cert-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+}
+.pageb-cert-row:last-child { border-bottom: none; }
+.pageb-cert-icon { color: var(--neon-green); font-size: 0.9rem; }
+.pageb-cert-name { flex: 1; color: #ccc; }
+.pageb-cert-year { color: var(--muted); font-size: 0.7rem; }
+
+/* ── SKILLS TAB ── */
+.pageb-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.pageb-skill-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 16px;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.pageb-skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent, var(--neon-green));
+  opacity: 0.7;
+}
+.pageb-skill-card:hover {
+  border-color: rgba(57,255,20,0.3);
+  box-shadow: 0 0 20px rgba(57,255,20,0.07);
+  transform: translateY(-2px);
+}
+
+.pageb-skill-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.pageb-skill-icon {
+  font-size: 1.4rem;
+  color: var(--accent, var(--neon-green));
+}
+.pageb-skill-name {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: 500;
+}
+.pageb-skill-pct {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.pageb-skill-track {
+  width: 100%;
+  height: 3px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.pageb-skill-fill {
+  height: 100%;
+  border-radius: 2px;
+  box-shadow: 0 0 8px currentColor;
+  transition: width 0.6s ease;
+}
+
+/* ── EXPERIENCE TAB ── */
+.pageb-exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.pageb-exp-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+  position: relative;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pageb-exp-card:hover {
+  border-color: rgba(57,255,20,0.35);
+  box-shadow: 0 0 24px rgba(57,255,20,0.07);
+  transform: translateY(-3px);
+}
+
+.pageb-exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.pageb-exp-logo {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+.pageb-exp-tag {
+  font-size: 0.65rem;
+  background: rgba(57,255,20,0.1);
+  color: var(--neon-green);
+  border: 1px solid rgba(57,255,20,0.25);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.pageb-exp-role {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+}
+.pageb-exp-company {
+  font-size: 0.78rem;
+  color: var(--neon-green);
+}
+.pageb-exp-period {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.pageb-exp-desc {
+  font-size: 0.78rem;
+  color: #777;
+  line-height: 1.7;
+  font-weight: 300;
+  flex: 1;
+}
+.pageb-exp-arrow {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  color: rgba(57,255,20,0.2);
+  font-size: 0.8rem;
+  transition: color 0.2s;
+}
+.pageb-exp-card:hover .pageb-exp-arrow { color: var(--neon-green); }
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+.pageb-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 48px;
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+  font-size: 0.72rem;
+  color: var(--muted);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pageb-home-link {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--neon-green);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  padding: 5px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pageb-home-link:hover {
+  border-color: var(--neon-green);
+  background: rgba(57,255,20,0.05);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .pageb-hero { padding: 28px 20px; }
+  .pageb-body { padding: 24px 20px; }
+  .pageb-footer { padding: 14px 20px; }
+  .pageb-nav { padding: 10px 16px; }
+  .pageb-hero-name { font-size: 1.8rem; }
+  .pageb-about-panel { grid-template-columns: 1fr; }
+  .pageb-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .pageb-exp-grid { grid-template-columns: 1fr; }
+}
