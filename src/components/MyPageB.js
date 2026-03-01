@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   FaGithub, FaLinkedin, FaEnvelope, FaPhone,
-  FaPython, FaDocker, FaDatabase, FaServer, FaLinux, FaGitAlt,
+  FaPython, FaDocker, FaDatabase, FaServer, FaLinux,
   FaArrowLeft, FaMapMarkerAlt, FaUniversity, FaChevronRight
 } from 'react-icons/fa';
 import { SiPostgresql, SiRedis, SiKubernetes, SiNginx } from 'react-icons/si';
@@ -97,7 +97,7 @@ function MyPageB() {
             <span className="pageb-avatar-hint">🏠</span>
           </div>
           <div className="pageb-hero-text">
-            <p className="pageb-hero-label">// Software Developer</p>
+            <p className="pageb-hero-label">{/* Software Developer */}</p>
             <h1 className="pageb-hero-name">Tatpong<br />Srihongthong</h1>
             <div className="pageb-hero-tags">
               <span className="pageb-tag"><FaUniversity /> Southeast Asia University</span>
